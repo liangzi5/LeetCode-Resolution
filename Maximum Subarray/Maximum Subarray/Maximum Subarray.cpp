@@ -11,7 +11,16 @@ using namespace std;
 
 int maxSubArray(vector<int>&nums)
 {
-	int sum=nums[]
+	int len = nums.size();
+	int sum = nums[len-1];
+	int maxSum = sum;
+	for (int i = len - 2; i >= 0; i--)
+	{
+		sum = max(sum + nums[i],nums[i]);
+		maxSum = max(sum, maxSum);
+
+	}
+	return maxSum;
 }
 
 int main()
